@@ -1,7 +1,27 @@
-// NOTE: use this store variable to create a store.
-export const store = {};
+import { applyMiddleware, legacy_createStore,compose } from "redux";
+import thunk from "redux-thunk";
 
-// NOTE: Do not remove this code,its used for calculating your score, if removed it will give you zero marks
+import { combineReducers } from "redux";
+import { reducer } from "./AppReducer/reducer";
+import { Authreducer } from "./AuthReducer/reducer";
+
+const rootreducer =combineReducers({
+ reducer,
+ Authreducer
+  })
+  
+const composeEnhancers     =window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+  // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+}) : compose;
+ export const store =legacy_createStore(rootreducer,composeEnhancers(applyMiddleware(thunk)))
+
+
+
+
+
+
+
 if (window.Cypress) {
   window.store = store;
 }

@@ -1,8 +1,8 @@
 import React from "react";
-
+import "../index.css";
 const Navbar = () => {
   return (
-    <div>
+    <div className="navflex">
       <div data-cy="navbar-home-link">
         <img
           src="/Adidas_Logo.png"

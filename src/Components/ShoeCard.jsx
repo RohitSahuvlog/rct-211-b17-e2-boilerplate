@@ -1,17 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ShoeCard = () => {
+const ShoeCard = (shoes) => {
   let shoeId = null;
-  return (
-    <div data-cy={`shoe-card-wrapper-${shoeId}`}>
+  // console.log(shoes.shoes.id)
+  return (<Link to={`/shoes/${shoes.shoes.id}`}>
+    <div data-cy={`shoe-card-wrapper-${shoes.shoes.id}`} style={{ border:"2px solid black"}}>
       <div>
-        <img data-cy="shoe-card-image" src="" alt="" />
+        <img data-cy="shoe-card-image" src={shoes.shoes.image} alt="" style={{width:"200px",height:"200px"}} />
       </div>
       <div>
-        <div data-cy="shoe-name">name</div>
-        <div data-cy="shoe-category">category</div>
+        <div data-cy="shoe-name">{shoes.shoes.name}</div>
+        <div data-cy="shoe-category">{shoes.shoes.category}</div>
       </div>
     </div>
+    </Link>
   );
 };
 
