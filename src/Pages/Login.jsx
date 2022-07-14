@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate,useLocation } from "react-router-dom";
-import { useState,useDispatch } from "react";
+import { useState } from "react";
 import { login } from "../Redux/AuthReducer/action";
+import { useDispatch } from "react-redux";
 const Login = () => {
 
   const navigate =useNavigate()

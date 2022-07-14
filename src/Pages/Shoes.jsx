@@ -20,7 +20,7 @@ const Shoes = () => {
   //     if(shoes?.length ===0 && !urlCategory ){
   //     dispatch(Getshoes())
   // }
-  // },[])
+  // },[dispatch])
   return (
     <div style={{display:"flex" ,padding:"20px"}}>
     <div style={{ width:"200px",border:"2px solid black"}}>
